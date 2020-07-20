@@ -26,7 +26,7 @@ I18N_LANGUAGES = [
 ]
 
 COVER_TEMPLATE = "invenio_theme/page_cover.html"
-SERVER_NAME = 'localhost:5000'
+SERVER_NAME = 'web:5000'
 
 SECURITY_REGISTERABLE = False
 SECURITY_LOGIN_USER_TEMPLATE = 'scoap3_theme/login_user.html'
@@ -493,6 +493,11 @@ WORKFLOWS_UI_REST_FACETS = {
 
 WORKFLOWS_STORAGEDIR = '/tmp/workflows-harvesting'
 
+ARTICLE_UPLOAD_SEND_HALTED_EMAILS = True
+"""
+If True an email will be send if an article_upload workflow gets halted.
+"""
+
 CRAWLER_DATA_TYPE = 'harvesting'
 SCRAPY_FEED_URI = '/eos/project/s/scoap3repo/scrapy_feed.json'
 
@@ -650,6 +655,11 @@ COMPLIANCE_JOURNAL_FILES = {
 """
 Required file types for journals. This is validated in the compliance check.
 The articles are required to have *exactly* these files.
+"""
+
+COMPLIANCE_SEND_FAILED_EMAILS = True
+"""
+If true an email will be sent every time a compliance check doesn't pass.
 """
 
 PARTNER_COUNTRIES = ["Australia", "Austria", "Belgium", "Canada", "China", "CERN",
